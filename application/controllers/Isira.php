@@ -9,6 +9,7 @@ class Isira extends CI_Controller {
 
      public function kasun()
     {
+    	$this->load->helper('url');
       $this->load->view('home_view');          
     }
 }
