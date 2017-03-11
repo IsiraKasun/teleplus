@@ -60,41 +60,44 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1 id="homeHeading">Welcome to teleplus</h1>
+                <h1 id="homeHeading"> Welcome </h1>
                 <hr>
                 <p>Please login into continue</p>
-                <button class="btn btn-primary btn-xl page-scroll" data-toggle="modal" data-target="#loginModal">Login   </button>
+                <!--button class="btn btn-primary btn-xl page-scroll" data-toggle="modal" data-target="#loginModal">Login   </button-->
+         <div class="container">
+                <div class="col-sm-4 col-sm-offset-3">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                   <center><h3 class="panel-title"> Login </h3> </center>
+                  </div>
+                  <div class="panel-body">
+            
+                <?php echo form_open('login_controller/validate_credentials'); ?>
+                        <?php if (isset($loginerror)) echo $loginerror ?>
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="username" placeholder="Username" name="name">
+                          </div>
+                          <div class="form-group">
+                            <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+                          </div>
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox"> Remember me
+                            </label>
+                          </div>
+                          <button type="submit" class="btn btn-primary">Sign In </button>
+            </form>
+         
+          </div>
+        </div>
             </div>
         </div>
+           </div>
+            </div>
     </header>
 
-    <!-- Modal -->
-		<div class="modal fade bs-example-modal-sm" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-		  <div class="modal-dialog modal-vertical-centered" role="document">
-		    <div class="modal-content"  id="LoginModalDialog">
-		      <div class="modal-header">
-		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		        <center><h4 class="modal-title" id="myModalLabel">Login</h4> </center>
-		      </div>
-		      <div class="modal-body">
-		       <form>
-						  <div class="form-group">
-						    <input type="text" class="form-control" id="username" placeholder="Username">
-						  </div>
-						  <div class="form-group">
-						    <input type="password" class="form-control" id="password" placeholder="Password">
-						  </div>
-						  <div class="checkbox">
-						    <label>
-						      <input type="checkbox"> Remember me
-						    </label>
-						  </div>
-						  <button type="submit" class="btn btn-primary">Login</button>
-						</form>
-		      </div>
-		    </div>
-		  </div>
-		</div>
+
+
 
    
 
