@@ -157,7 +157,7 @@ header {
   background-position: center;
   background-image: url('../img/header.jpg');
   text-align: center;
-  color: white;
+  color: black;
 }
 header .header-content {
   position: relative;
@@ -415,8 +415,7 @@ body {
   webkit-tap-highlight-color: #222222;
 }
 
-.modal-vertical-centered {
-  transform: translate(0, 50%) !important;
-  -ms-transform: translate(0, 50%) !important; /* IE 9 */
-  -webkit-transform: translate(0, 50%) !important; /* Safari and Chrome */
+.error {
+  color:red;
+  padding: 0px;
 }
