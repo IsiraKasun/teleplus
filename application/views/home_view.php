@@ -23,7 +23,7 @@
     <link href="<?php echo base_url();?>assets/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
     <!-- Theme CSS -->
-    <link href="<?php echo base_url();?>assets/css/creative.min.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/creative.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -31,6 +31,15 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+      <style>
+        header .header-content-normal {
+              position: absolute;
+              text-align: center;
+              margin-top: 100px;
+              width: 100%;
+            }
+    </style>
 
 </head>
 
@@ -50,7 +59,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="#about">Home</a>
+                        <a class="page-scroll" href="<?php echo base_url();?>home">">Home</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#services">customers</a>

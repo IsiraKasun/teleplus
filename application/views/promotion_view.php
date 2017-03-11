@@ -23,7 +23,7 @@
     <link href="<?php echo base_url();?>assets/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
     <!-- Theme CSS -->
-    <link href="<?php echo base_url();?>assets/css/creative.min.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/creative.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -31,6 +31,15 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <style>
+        header .header-content-normal {
+              position: absolute;
+              text-align: center;
+              margin-top: 100px;
+              width: 100%;
+            }
+    </style>
 
 </head>
 
@@ -50,7 +59,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="#about">Home</a>
+                        <a class="page-scroll" href="<?php echo base_url();?>home">Home</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#services">customers</a>
@@ -72,12 +81,49 @@
     </nav>
 
     <header>
-        <div class="header-content">
-            <div class="header-content-inner">
-                <h1 id="homeHeading">WELCOME TO TELEPLUS</h1>
-                <hr>
-                <!--a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a-->
-            </div>
+        <div class="header-content-normal">
+        <a href="" class="btn btn-primary btn-xl page-scroll">Add Promotion</a>
+        <p> </p>
+          <div class="container">
+          
+          <div class="panel panel-default">
+            <div class="panel-heading"> Promotions</div>
+        <div class="panel-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th> Promotion ID </th>
+                        <th> Type </th>
+                        <th> Description </th>
+                        <th> Starting date </th>
+                        <th> Ending date </th>
+                        <th> Added by </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <?php  
+                         foreach ($values->result() as $row)  
+                         {  
+                            ?><tr>  
+                            <td><?php echo $row->pro_id;?></td>  
+                            <td><?php echo $row->type;?></td>
+                            <td><?php echo $row->description;?></td> 
+                            <td><?php echo $row->starting_date;?></td> 
+                            <td><?php echo $row->ending_date;?></td> 
+                            <td><?php echo $row->added_by;?></td>   
+                            </tr>  
+                         <?php }  
+                    ?>  
+
+                </tbody>
+
+            </table>
+
+        </div>
+        </div>
+        </div>
         </div>
     </header>
 
