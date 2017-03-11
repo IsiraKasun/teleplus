@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title> TELEPLUS</title>
+    <title> Teleplus </title>
 
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url();?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -23,7 +23,7 @@
     <link href="<?php echo base_url();?>assets/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
     <!-- Theme CSS -->
-    <link href="<?php echo base_url();?>assets/css/creative.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/creative.min.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -49,7 +49,21 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-       
+                    <li>
+                        <a class="page-scroll" href="#about">Home</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#services">customers</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#portfolio">Departments</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Staff</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Promotions</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -60,44 +74,12 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1 id="homeHeading"> Welcome </h1>
+                <h1 id="homeHeading">WELCOME TO TELEPLUS</h1>
                 <hr>
-                <p>Please login into continue</p>
-                <!--button class="btn btn-primary btn-xl page-scroll" data-toggle="modal" data-target="#loginModal">Login   </button-->
-         <div class="container">
-                <div class="col-sm-4 col-sm-offset-3">
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                   <center><h3 class="panel-title"> Login </h3> </center>
-                  </div>
-                  <div class="panel-body">
-            
-                <?php echo form_open('login_controller/validate_credentials'); ?>
-                        <?php if (isset($loginerror)) echo $loginerror ?>
-                          <div class="form-group">
-                            <input type="text" class="form-control" id="username" placeholder="Username" name="name">
-                          </div>
-                          <div class="form-group">
-                            <input type="password" class="form-control" id="password" placeholder="Password" name="password">
-                          </div>
-                          <div class="checkbox">
-                            <label>
-                              <input type="checkbox"> Remember me
-                            </label>
-                          </div>
-                          <button type="submit" class="btn btn-primary">Sign In </button>
-            </form>
-         
-          </div>
-        </div>
+                <!--a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a-->
             </div>
         </div>
-           </div>
-            </div>
     </header>
-
-
-
 
    
 

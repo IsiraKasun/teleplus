@@ -3,14 +3,15 @@
 class Isira extends CI_Controller {
 	
     public function index()
-    {
-      $this->load->view('home_view');          
+    {	
+    	$this->load->helper('url');
+      $this->load->view('login_view');          
     }
 
-     public function kasun()
+    public function kasun()
     {
-    	$this->load->helper('url');
-      $this->load->view('home_view');          
+
+      $this->load->view('welcome_message');          
     }
 }
 
