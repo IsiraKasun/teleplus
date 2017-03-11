@@ -82,7 +82,9 @@
 
     <header>
         <div class="header-content-normal">
-        <a href="" class="btn btn-primary btn-xl page-scroll">Add Promotion</a>
+        <button type="button" class="btn btn-primary btn-xl page-scroll" data-toggle="modal" data-target="#myModal">
+          Add Promotion
+        </button>
         <p> </p>
           <div class="container">
           
@@ -125,6 +127,41 @@
         </div>
         </div>
         </div>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Add new Promotion</h4>
+              </div>
+              <div class="modal-body">
+                 <?php echo form_open('promotion_controller/add_new_promotion'); ?>
+                        <?php if (isset($loginerror)) echo $loginerror ?>
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="username" placeholder="Type" name="type">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="password" placeholder="Description" name="description">
+                          </div>
+                          <div class="form-group">
+                            Starting date
+                            <input type="date" class="form-control" id="password" placeholder="Starting date" name="starting_date">
+                          </div>
+                          <div class="form-group">
+                            Ending date
+                            <input type="date" class="form-control" id="password" placeholder="Ending date" name="ending_date">
+                          </div>
+
+                          <button type="submit" class="btn btn-primary"> Add </button>
+            </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
     </header>
 
    
