@@ -51,6 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 $route['default_controller'] = 'Login_controller';
+$route['logout'] = 'Login_controller/logout';
 $route['home'] = 'Home_controller/index';
 $route['promotion'] = 'Promotion_controller/index';
 $route['promotion/add'] = 'Promotion_controller/addnew';
