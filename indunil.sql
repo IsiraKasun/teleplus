@@ -32,7 +32,7 @@ Description VARCHAR(255),
 Starting_date DATE,
 Ending_date DATE,
 csf_id INT,
-FOREIGN KEY (csf_id) REFERENCES customer_service_staff(csf_id)
+FOREIGN KEY (csf_id) REFERENCES system_user(userid)
 );
 
 CREATE TABLE customers (
