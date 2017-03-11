@@ -52,7 +52,7 @@
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">TELEPLUS</a>
+                <a class="navbar-brand page-scroll" href="#page-top">TELEPLUS - <?php echo $current_user ?></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -72,6 +72,9 @@
                     </li>
                     <li>
                         <a class="page-scroll" href="<?php echo base_url();?>promotion">Promotions</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="<?php echo base_url();?>logout">Log out</a>
                     </li>
                 </ul>
             </div>

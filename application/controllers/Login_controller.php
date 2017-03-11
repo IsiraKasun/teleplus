@@ -22,7 +22,7 @@ class Login_controller extends CI_Controller {
                 $this->load->model('login_model');  
                 if($this->login_model->credintials_from_db($name, $password))  
                 {  
-
+                     $_SESSION['current_user'] = $name;
                      redirect(base_url() . 'home');  
                 }  
                 else  
@@ -37,6 +37,12 @@ class Login_controller extends CI_Controller {
                 $data['loginerror'] = "Username or password incorrect";
                 $this->load->view('login_view', $data);   
            }  
+    }
+
+    public function logout()
+    {
+      unset($_SESSION['current_user']);
+      redirect(base_url());
     }
     
 }
