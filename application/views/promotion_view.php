@@ -141,6 +141,7 @@
                 <h4 class="modal-title" id="myModalLabel">Add new Promotion</h4>
               </div>
               <div class="modal-body">
+                    <?php echo validation_errors() ?>
                  <?php echo form_open('promotion_controller/add_new_promotion'); ?>
                         <?php if (isset($loginerror)) echo $loginerror ?>
                           <div class="form-group">

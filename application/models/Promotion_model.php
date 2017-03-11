@@ -13,4 +13,17 @@
          $query = $this->db->query("SELECT name FROM system_user WHERE userid IN (SELECT csf_id FROM customer_service_staff)"); 
            return $query; 
       }
+
+      function get_system_userid($name)
+      {
+        $sql = "SELECT userid from system_user WHERE name = ? ";
+        $query = $this->db->query($sql,array($name));
+        return $query->row('userid');
+
+      }
+
+      function add_new_promotion($values){
+        $this->db->insert('promotion', $values);
+
+      }
  } 
