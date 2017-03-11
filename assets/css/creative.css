@@ -165,6 +165,25 @@ header .header-content {
   padding: 100px 15px 100px;
   width: 100%;
 }
+
+header .header-content-normal {
+  position: absolute;
+  text-align: center;
+  padding: 100px 15px 100px;
+  width: 100%;
+}
+
+@media (min-width: 768px){
+.header .header-content-normal {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    padding: 0 50px;
+}
+}
+
 header .header-content .header-content-inner h1 {
   font-weight: 700;
   text-transform: uppercase;
@@ -419,3 +438,4 @@ body {
   color:red;
   padding: 0px;
 }
+
