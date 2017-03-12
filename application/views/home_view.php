@@ -65,6 +65,9 @@
                         <a class="page-scroll" href="<?php echo base_url();?>customers">customers</a>
                     </li>
                     <li>
+                        <a class="page-scroll" href="<?php echo base_url();?>feedback">feedback</a>
+                    </li>
+                    <li>
                         <a class="page-scroll" href="#portfolio">Departments</a>
                     </li>
                     <li>

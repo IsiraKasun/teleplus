@@ -12,4 +12,10 @@
         $this->db->insert('customers', $values);
 
       }
+
+      function get_all_promotions()
+      {
+          $query = $this->db->query("SELECT description FROM promotion"); 
+          return $query;
+      }
  } 
