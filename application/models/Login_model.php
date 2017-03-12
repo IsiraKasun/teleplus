@@ -20,7 +20,7 @@
         $sql = 'SELECT * FROM administrator a, system_user s WHERE a.ad_id = s.userid AND s.name = ? ';
            $query = $this->db->query($sql,array($name));
            if($query->num_rows() > 0)  
-           {dd  
+           {  
                 return true;  
            }  
            else  
