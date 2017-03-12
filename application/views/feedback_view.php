@@ -88,86 +88,106 @@
 
     <header>
         <div class="header-content-normal">
-        <button type="button" class="btn btn-primary btn-xl page-scroll" data-toggle="modal" data-target="#myModal">
-          Add Promotion
-        </button>
-        <p> </p>
-          <div class="container">
-          
-          <div class="panel panel-default">
-            <div class="panel-heading"> Promotions</div>
-        <div class="panel-body">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th> Promotion ID </th>
-                        <th> Type </th>
-                        <th> Description </th>
-                        <th> Starting date </th>
-                        <th> Ending date </th>
-                        <th> Added by </th>
-                    </tr>
-                </thead>
 
-                <tbody>
+          <div class="container-fluid">
 
-                    <?php  
-                         foreach ($values->result() as $row)  
-                         {  
-                            ?><tr>  
-                            <td><?php echo $row->pro_id;?></td>  
-                            <td><?php echo $row->type;?></td>
-                            <td><?php echo $row->description;?></td> 
-                            <td><?php echo $row->starting_date;?></td> 
-                            <td><?php echo $row->ending_date;?></td> 
-                            <td><?php echo $row->added_by;?></td>   
-                            </tr>  
-                         <?php }  
-                    ?>  
+          <div class="row">
+                <div class="col-sm-4">
+                    <div class="panel panel-default">
+                    <div class="panel-heading"> Add customer Feedback</div>
+                    <div class="panel-body">
 
-                </tbody>
-
-            </table>
-
-        </div>
-        </div>
-        </div>
-        </div>
-
-
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Add new Promotion</h4>
-              </div>
-              <div class="modal-body">
-                    <?php echo validation_errors() ?>
-                 <?php echo form_open('promotion_controller/add_new_promotion'); ?>
+                        <?php echo validation_errors() ?>
+                        <?php echo form_open('feedback_controller/add_new_feedback'); ?>
                         <?php if (isset($loginerror)) echo $loginerror ?>
                           <div class="form-group">
-                            <input type="text" class="form-control" id="username" placeholder="Type" name="type">
-                          </div>
-                          <div class="form-group">
-                            <input type="text" class="form-control" id="password" placeholder="Description" name="description">
-                          </div>
-                          <div class="form-group">
-                            Starting date
-                            <input type="date" class="form-control" id="password" placeholder="Starting date" name="starting_date">
-                          </div>
-                          <div class="form-group">
-                            Ending date
-                            <input type="date" class="form-control" id="password" placeholder="Ending date" name="ending_date">
-                          </div>
+                            <select class="form-control" name="cus_id">
+                            <?php  
+                                 foreach ($cus_names->result() as $row)  
+                                 { ?>
+                                <option value="<?php echo $row->cus_id;?>"><?php echo $row->cus_name ?></option>
+                                 <?php }  
+                            ?>  
+                            </select>
 
+                          </div>
+                           <div class="form-group">
+                            <select class="form-control" name="pro_id">
+                            <?php  
+                                 foreach ($promotion_names->result() as $row)  
+                                 { ?>
+                                <option value="<?php echo $row->pro_id;?>"><?php echo $row->description ?></option>
+                                 <?php }  
+                            ?>  
+                            </select>
+
+                          </div>
+                          <div class="form-group">
+                            <select class="form-control" name="status">
+                                <option value="accepted"> Accepted</option>
+                                <option value="denied"> Denied </option> 
+                            </select>
+                          </div>
+                        
                           <button type="submit" class="btn btn-primary"> Add </button>
-            </form>
-              </div>
-            </div>
-          </div>
+                    </form>
+                    
+                </div>
+                </div>
+                
+                </div>
+                <div class="col-sm-8">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading"> Feedback</div>
+                        <div class="panel-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th> Feedback ID </th>
+                                <th> Customer ID </th>
+                                <th> Customer Name </th>
+                                <th> Promotion ID </th>
+                                <th> Promotion Name </th>
+                                <th> Status </th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <?php  
+                                 foreach ($values->result() as $row)  
+                                 {  
+                                    ?><tr>  
+                                    <td><?php echo $row->f_id;?></td>  
+                                    <td><?php echo $row->cus_id;?></td>
+                                    <td><?php echo $row->cus_name;?></td> 
+                                    <td><?php echo $row->pro_id;?></td>
+                                    <td><?php echo $row->description;?></td> 
+                                    <td><?php echo $row->status;?></td>     
+                                    </tr>  
+                                 <?php }  
+                            ?>  
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+                </div>
+
+                </div>
+
+
+               
+                </div>
+          
+          
         </div>
+        </div>
+
+
+       
 
     </header>
 

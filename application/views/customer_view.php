@@ -64,6 +64,9 @@
                     <li>
                         <a class="page-scroll" href="<?php echo base_url();?>customers">customers</a>
                     </li>
+                     <li>
+                        <a class="page-scroll" href="<?php echo base_url();?>feedback">feedback</a>
+                    </li>
                     <li>
                         <a class="page-scroll" href="#portfolio">Departments</a>
                     </li>
@@ -89,14 +92,16 @@
           <div class="container-fluid">
 
           <div class="row">
+                
                 <div class="col-sm-4">
+
 
                     <div class="panel panel-default">
                     <div class="panel-heading"> Add customer</div>
                     <div class="panel-body">
 
                         <?php echo validation_errors() ?>
-                 <?php echo form_open('customer_controller/add_new_customer'); ?>
+                        <?php echo form_open('customer_controller/add_new_customer'); ?>
                         <?php if (isset($loginerror)) echo $loginerror ?>
                           <div class="form-group">
                             <input type="text" class="form-control" id="username" placeholder="Customer Name" name="cus_name">
