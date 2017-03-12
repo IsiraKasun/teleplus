@@ -22,6 +22,15 @@ class Login_controller extends CI_Controller {
                 $this->load->model('login_model');  
                 if($this->login_model->credintials_from_db($name, $password))  
                 {  
+                     
+                     if($this->login_model->check_if_admin($name))
+                     {
+                        $_SESSION['admin'] = true;
+                     }
+                     else{
+                        $_SESSION['admin'] = false;
+                     }
+
                      $_SESSION['current_user'] = $name;
                      redirect(base_url() . 'home');  
                 }  
@@ -42,6 +51,7 @@ class Login_controller extends CI_Controller {
     public function logout()
     {
       unset($_SESSION['current_user']);
+      unset($_SESSION['admin']);
       redirect(base_url());
     }
     
