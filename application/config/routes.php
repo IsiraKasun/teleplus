@@ -56,6 +56,7 @@ $route['home'] = 'Home_controller/index';
 $route['promotion'] = 'Promotion_controller/index';
 $route['customers'] = 'Customer_controller/index';
 $route['feedback'] = 'Feedback_controller/index';
+$route['admin'] = 'Admin_controller/index';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 

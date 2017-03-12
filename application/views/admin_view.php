@@ -98,86 +98,86 @@
 
     <header>
         <div class="header-content-normal">
-        <button type="button" class="btn btn-primary btn-xl page-scroll" data-toggle="modal" data-target="#myModal">
-          Add Promotion
-        </button>
-        <p> </p>
+
           <div class="container">
+
+          <div class="row">
           
-          <div class="panel panel-default">
-            <div class="panel-heading"> Promotions</div>
-        <div class="panel-body">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th> Promotion ID </th>
-                        <th> Type </th>
-                        <th> Description </th>
-                        <th> Starting date </th>
-                        <th> Ending date </th>
-                        <th> Added by </th>
-                    </tr>
-                </thead>
+            <ol class="breadcrumb">
+              <li class="active"><a href="#">Feedback</a></li>
+              <li><a href="#">Agreements</a></li>
+              <li><a href="#">Staff</a></li>
+            </ol>
 
-                <tbody>
+             <div class="panel panel-default">
+              <div class="panel-body">
 
-                    <?php  
-                         foreach ($values->result() as $row)  
-                         {  
-                            ?><tr>  
-                            <td><?php echo $row->pro_id;?></td>  
-                            <td><?php echo $row->type;?></td>
-                            <td><?php echo $row->description;?></td> 
-                            <td><?php echo $row->starting_date;?></td> 
-                            <td><?php echo $row->ending_date;?></td> 
-                            <td><?php echo $row->added_by;?></td>   
-                            </tr>  
-                         <?php }  
-                    ?>  
-
-                </tbody>
-
-            </table>
-
-        </div>
-        </div>
-        </div>
-        </div>
-
-
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Add new Promotion</h4>
+              <form class="form-inline" method="post" action="<?php echo base_url();?>admin_controller/getselectedpromotion">
+                
+                <div class="form-group">
+                    <label for="exampleInputName2">Select Promotion</label>
+                    <select class="form-control" name="pro_id">
+                            <?php  
+                                 foreach ($promotion_names->result() as $row)  
+                                 { ?>
+                                <option value="<?php echo $row->pro_id;?>"><?php echo $row->description ?></option>
+                                 <?php }  
+                            ?>  
+                            </select>
+                </div>
+                  <button type="submit" class="btn btn-primary"> Get Analysis </button>
+                </form>
+                
+                    
               </div>
-              <div class="modal-body">
-                    <?php echo validation_errors() ?>
-                 <?php echo form_open('promotion_controller/add_new_promotion'); ?>
-                        <?php if (isset($loginerror)) echo $loginerror ?>
-                          <div class="form-group">
-                            <input type="text" class="form-control" id="username" placeholder="Type" name="type">
-                          </div>
-                          <div class="form-group">
-                            <input type="text" class="form-control" id="password" placeholder="Description" name="description">
-                          </div>
-                          <div class="form-group">
-                            Starting date
-                            <input type="date" class="form-control" id="password" placeholder="Starting date" name="starting_date">
-                          </div>
-                          <div class="form-group">
-                            Ending date
-                            <input type="date" class="form-control" id="password" placeholder="Ending date" name="ending_date">
-                          </div>
 
-                          <button type="submit" class="btn btn-primary"> Add </button>
-            </form>
-              </div>
+               
             </div>
-          </div>
+
+            <div class="panel panel-default">
+            <div class="panel-heading"> Feedback Analysis </div>
+              <div class="panel-body">
+
+              <?php if(isset($success) && isset($failure)){ 
+
+              ?>
+                <h3> Success </h3>
+                   <div class="progress">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="<?php echo $success;?>" aria-valuemin="0" aria-valuemax="100" style="<?php echo "min-width: 2em; width: ".$success."%;"?>">
+                        <?php echo "".$success."%";?>
+                      </div>
+                   </div>
+                <br/>
+                 <h3> Failures </h3>
+                   <div class="progress">
+                      <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="<?php echo "min-width: 2em; width: ".$failure."%;"?>">
+                       <?php echo "".$success."%";?> 
+                      </div>
+                   </div>
+
+              <?php }
+
+              else { ?>
+
+                 <h3> Please select a promotion to view analysis </h3>
+
+             <?php }
+
+              ?>
+
+                 
+                    
+              </div>
+
+               
+         </div>
+          
+          
         </div>
+        </div>
+
+
+       
 
     </header>
 
