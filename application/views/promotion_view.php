@@ -61,6 +61,16 @@
                     <li>
                         <a class="page-scroll" href="<?php echo base_url();?>home">Home</a>
                     </li>
+                     <?php 
+                        if($_SESSION['admin'] == true) { ?>
+
+                         <li>
+                            <a class="page-scroll" href="<?php echo base_url();?>admin">Admin</a>
+                        </li>
+
+                     <?php   }
+
+                    ?>
                     <li>
                         <a class="page-scroll" href="<?php echo base_url();?>customers">customers</a>
                     </li>
