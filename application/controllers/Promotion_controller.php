@@ -15,8 +15,8 @@ class Promotion_controller extends CI_Controller {
 
     			else
     			{
-    			 $data['loginerror'] = "Username or password incorrect";
-	      	 $this->load->view('login_view',$data);   
+    			 $data['loginerror'] = "You must be logged in";
+	      	    $this->load->view('login_view',$data);   
     			}
 
     		  

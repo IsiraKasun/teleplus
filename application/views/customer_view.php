@@ -32,7 +32,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-      <style>
+    <style>
         header .header-content-normal {
               position: absolute;
               text-align: center;
@@ -84,13 +84,85 @@
     </nav>
 
     <header>
-        <div class="header-content">
-            <div class="header-content-inner">
-                <h1 id="homeHeading">WELCOME TO TELEPLUS</h1>
-                <hr>
-                <!--a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a-->
-            </div>
+        <div class="header-content-normal">
+
+          <div class="container-fluid">
+
+          <div class="row">
+                <div class="col-sm-4">
+
+                    <div class="panel panel-default">
+                    <div class="panel-heading"> Add customer</div>
+                    <div class="panel-body">
+
+                        <?php echo validation_errors() ?>
+                 <?php echo form_open('customer_controller/add_new_customer'); ?>
+                        <?php if (isset($loginerror)) echo $loginerror ?>
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="username" placeholder="Customer Name" name="cus_name">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="password" placeholder="Contact Number" name="con_num">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="password" placeholder="Custome Detail URL" name="cus_detail_URL">
+                          </div>
+                        
+                          <button type="submit" class="btn btn-primary"> Add </button>
+                    </form>
+                    
+
+                </div>
+                </div>
+
+                </div>
+
+                <div class="col-sm-8">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading"> Customers</div>
+                        <div class="panel-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th> Customer ID </th>
+                                <th> Name </th>
+                                <th> Customer Detail URL </th>
+                                <th> Contact Number </th>
+
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <?php  
+                                 foreach ($values->result() as $row)  
+                                 {  
+                                    ?><tr>  
+                                    <td><?php echo $row->cus_id;?></td>  
+                                    <td><?php echo $row->cus_name;?></td>
+                                    <td><?php echo $row->cus_detail_URL;?></td> 
+                                    <td><?php echo $row->con_num;?></td>  
+                                    </tr>  
+                                 <?php }  
+                            ?>  
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+                </div>
+                </div>
+                </div>
+          
+          
         </div>
+        </div>
+
+
+       
+
     </header>
 
    
