@@ -62,7 +62,7 @@
                         <a class="page-scroll" href="<?php echo base_url();?>home">Home</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">customers</a>
+                        <a class="page-scroll" href="<?php echo base_url();?>customers">customers</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#portfolio">Departments</a>
