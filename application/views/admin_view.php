@@ -151,7 +151,7 @@
                  <h3> Failures </h3>
                    <div class="progress">
                       <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="<?php echo "min-width: 2em; width: ".$failure."%;"?>">
-                       <?php echo "".$success."%";?> 
+                       <?php echo "".$failure."%";?> 
                       </div>
                    </div>
 
